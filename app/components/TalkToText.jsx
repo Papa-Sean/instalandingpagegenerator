@@ -119,20 +119,15 @@ const TalkToText = ({ ttsContent }) => {
 	};
 
 	return (
-		<div className='mt-4'>
+		<div className='mt-4 pt-8'>
 			<div className='flex flex-col items-start space-y-4 md:flex-row md:items-center md:space-x-4 md:space-y-0'>
 				{/* Language selector */}
 				<div className='form-control w-full md:w-auto'>
-					<label className='label'>
-						<span className='label-text text-md font-medium pr-1'>
-							Language Accent:
-						</span>
-					</label>
 					<select
 						id='accent-select'
 						value={accent}
 						onChange={(e) => setAccent(e.target.value)}
-						className='select select-bordered w-full md:w-auto bg-base-100 text-base-content'
+						className='select select-bordered w-full md:w-auto'
 						disabled={isLoading}
 					>
 						{voices.length === 0 ? (
@@ -145,7 +140,6 @@ const TalkToText = ({ ttsContent }) => {
 						) : (
 							voices.map((voice) => (
 								<option
-                                className="bg-base-100 text-black"
 									key={voice.id}
 									value={voice.id}
 								>
@@ -154,12 +148,15 @@ const TalkToText = ({ ttsContent }) => {
 							))
 						)}
 					</select>
+					<label className='label label-text relative md:-top-10 md:right-42 bottom-16 text-md font-medium pr-1'>
+						Language:
+					</label>
 				</div>
 
 				{/* Listen button */}
 				<button
 					onClick={handleSpeech}
-					className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 w-full md:w-auto'
+					className='bg-blue-500 text-white py-2 px-4 md:relative right-20 rounded hover:bg-blue-600 transition duration-300 w-full md:w-auto'
 					disabled={isLoading}
 				>
 					{isLoading ? 'Loading...' : isPlaying ? 'Stop' : 'Listen'}
