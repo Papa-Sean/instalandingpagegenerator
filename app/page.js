@@ -5,10 +5,8 @@ import Blog from './components/Blog';
 const dummyData = {
 	title: 'The Future of Web Development',
 	author: 'John Doe',
-	content:
-		'Web development is constantly evolving with new technologies and frameworks. In this blog post, we explore the latest trends and what the future holds for web developers.',
-	ttsContent:
-		'Web development is constantly evolving with new technologies and frameworks. In this blog post, we explore the latest trends and what the future holds for web developers.',
+	content: 'What up doe! how about we find out if this is working',
+	ttsContent: 'What up doe! how about we find out if this is working',
 };
 
 const BlogPage = () => {

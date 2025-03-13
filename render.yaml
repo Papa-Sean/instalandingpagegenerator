@@ -1,0 +1,27 @@
+services:
+    # Flask API service
+    - type: web
+      name: tts-backend
+      env: python
+      buildCommand: pip install -r requirements.txt
+      startCommand: gunicorn server:app
+      envVars:
+          - key: PYTHON_VERSION
+            value: 3.9.0
+          - key: PORT
+            value: 10000
+
+    # Next.js frontend
+    - type: web
+      name: tts-frontend
+      env: node
+      buildCommand: npm install && npm run build
+      startCommand: npm start
+      envVars:
+          - key: NODE_ENV
+            value: production
+          - key: FLASK_API_URL
+            fromService:
+                name: tts-backend
+                type: web
+                property: url
