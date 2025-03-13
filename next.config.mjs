@@ -6,7 +6,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/tts',
-				destination: 'http://localhost:5000/tts',
+				destination: `${process.env.FLASK_API_URL}/tts`,
 			},
 		];
 	},

@@ -1,6 +1,6 @@
 export async function GET() {
 	try {
-		const response = await fetch('http://localhost:5000/tts/voices');
+		const response = await fetch(`${process.env.FLASK_API_URL}/tts/voices`);
 
 		if (!response.ok) {
 			throw new Error(
