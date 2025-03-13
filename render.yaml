@@ -4,12 +4,11 @@ services:
       name: tts-backend
       env: python
       buildCommand: pip install -r requirements.txt
-      startCommand: gunicorn app:app
+      startCommand: gunicorn server:app
       envVars:
           - key: PYTHON_VERSION
             value: 3.9.0
-          - key: PORT
-            value: 10000
+          # PORT is automatically set by Render, no need to define it
 
     # Next.js frontend
     - type: web
@@ -18,10 +17,9 @@ services:
       buildCommand: npm install && npm run build
       startCommand: npm start
       envVars:
-          - key: NODE_ENV
-            value: production
           - key: FLASK_API_URL
             fromService:
                 name: tts-backend
                 type: web
                 property: url
+          # This automatically sets FLASK_API_URL to the backend service URL
