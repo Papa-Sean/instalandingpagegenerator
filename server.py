@@ -76,6 +76,18 @@ def get_voices():
         print(f"Error fetching voices: {e}")
         return jsonify({"error": str(e)}), 500
 
+@app.route('/', methods=['GET'])
+def index():
+    """Return basic API information or documentation"""
+    return jsonify({
+        "name": "Text-to-Speech API",
+        "version": "1.0.0",
+        "endpoints": {
+            "/tts": "POST - Convert text to speech",
+            "/tts/voices": "GET - List available voices"
+        }
+    })
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
