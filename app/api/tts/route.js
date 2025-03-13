@@ -1,6 +1,7 @@
 export async function POST(request) {
 	try {
 		const body = await request.json();
+		const API_URL = process.env.FLASK_API_URL || 'http://localhost:5000';
 		console.log('API route handling request for text:', body.text);
 		console.log('Language/accent:', body.lang || 'en');
 
@@ -10,7 +11,7 @@ export async function POST(request) {
 
 		try {
 			// Forward the request to Flask server with all parameters
-			const response = await fetch('http://localhost:5000/tts', {
+			const response = await fetch(`${API_URL}/tts`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
