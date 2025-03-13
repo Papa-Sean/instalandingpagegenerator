@@ -122,25 +122,30 @@ const TalkToText = ({ ttsContent }) => {
 		<div className='mt-4'>
 			<div className='flex flex-col items-start space-y-4 md:flex-row md:items-center md:space-x-4 md:space-y-0'>
 				{/* Language selector */}
-				<div className='w-full md:w-auto'>
-					<label
-						htmlFor='accent-select'
-						className='block text-sm font-medium mb-1'
-					>
-						Language:
+				<div className='form-control w-full md:w-auto'>
+					<label className='label'>
+						<span className='label-text text-md font-medium pr-1'>
+							Language Accent:
+						</span>
 					</label>
 					<select
 						id='accent-select'
 						value={accent}
 						onChange={(e) => setAccent(e.target.value)}
-						className='w-full md:w-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500'
+						className='select select-bordered w-full md:w-auto bg-base-100 text-base-content'
 						disabled={isLoading}
 					>
 						{voices.length === 0 ? (
-							<option value='en'>Loading languages...</option>
+							<option
+								value='en'
+								disabled
+							>
+								Loading languages...
+							</option>
 						) : (
 							voices.map((voice) => (
 								<option
+                                className="bg-base-100 text-black"
 									key={voice.id}
 									value={voice.id}
 								>

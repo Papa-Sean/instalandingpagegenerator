@@ -5,8 +5,8 @@ import Blog from './components/Blog';
 const dummyData = {
 	title: 'The Future of Web Development',
 	author: 'John Doe',
-	content: 'What up doe! how about we find out if this is working',
-	ttsContent: 'What up doe! how about we find out if this is working',
+	content: `What up doe! So I wanted to add AI voices but couldn't find a good API for it. If you know any, please let me know! Anywho, this is what I ended up with and its not quite the vibe but I'm getting there!`,
+	ttsContent: `What up doe! So I wanted to add AI voices but couldn't find a good API for it. If you know any, please let me know! Anywho, this is what I ended up with and its not quite the vibe but I'm getting there!`,
 };
 
 const BlogPage = () => {
