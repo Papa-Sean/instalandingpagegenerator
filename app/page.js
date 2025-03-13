@@ -5,8 +5,8 @@ import Blog from './components/Blog';
 const dummyData = {
 	title: 'The Future of Web Development',
 	author: 'John Doe',
-	content: `What up doe! So I wanted to add AI voices but couldn't find a good API for it. If you know any, please let me know! Anywho, this is what I ended up with and its not quite the vibe but I'm getting there!`,
-	ttsContent: `What up doe! So I wanted to add AI voices but couldn't find a good API for it. If you know any, please let me know! Anywho, this is what I ended up with and its not quite the vibe but I'm getting there!`,
+	content: `Below is a great example of how coding with AI gets you close but not quite there. I wanted to create a "play audio" option for a blog post and I didn't like the screen reader voice so it's off to AI I go... I couldn't figure out the AI generated project I attempted first so I asked AI for a suggestion and settled on trying to translate audio instead. Well, below you can pick a language and click the "Listen" button to load a "translation" so... Enjoy? Let me know if you figured out what went wrong...`,
+	ttsContent: `Below is a great example of how coding with AI gets you close but not quite there. I wanted to create a "play audio" option for a blog post and I didn't like the screen reader voice so it's off to AI I go... I couldn't figure out the AI generated project I attempted first so I asked AI for a suggestion and settled on trying to translate audio instead. Well, below you can pick a language and click the "Listen" button to load a "translation" so... Enjoy? Let me know if you figured out what went wrong...`,
 };
 
 const BlogPage = () => {
